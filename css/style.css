@@ -1,0 +1,165 @@
+/* Весь CSS код из предыдущего ответа */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+section {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px; /* Добавлены отступы по бокам */
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    font-size: 1.5em;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #333;
+    color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    section {
+        padding: 10px;
+    }
+}
+
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blinkCursor {
+    from, to {
+        border-right-color: transparent;
+    }
+
+    50% {
+        border-right-color: black;
+    }
+}
+
+@keyframes deleting {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0;
+    }
+}
+
+body {
+    text-align: center;
+}
+
+.typing-container {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+}
+
+h1 {
+    display: inline-block;
+    border-right: 2px solid black;
+    animation: typing 2s steps(40), blinkCursor 0.5s step-end infinite alternate;
+}
+
+.delete-animation {
+    display: inline-block;
+    white-space: nowrap;
+    border-right: 2px solid black;
+    width: 100%;
+    animation: deleting 2s steps(40) 2s forwards;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-image: url('fon.jpg'); /* Замените 'background.jpg' на путь к вашему изображению */
+    background-size: cover;
+    color: #fff; /* Цвет текста на фоне */
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* ... остальные стили ... */
+
+
+#dogImage {
+    text-align: center;
+    margin: 20px;
+}
+
+#dogImage img {
+    max-width: 20%; /* Максимальная ширина изображения - 100% от родительского контейнера */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    border-radius: 8px; /* Закругленные углы */
+}

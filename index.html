@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моє портфоліо</title>
+    <!-- Подключение внешнего CSS файла -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Подключение шрифта 'Roboto' -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        section {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: #333;
+            color: #fff;
+        }
+
+        @media only screen and (max-width: 600px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            section {
+                padding: 10px;
+            }
+        }
+    </style>
+
+    <style>
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blinkCursor {
+            from, to {
+                border-right-color: transparent;
+            }
+
+            50% {
+                border-right-color: black;
+            }
+        }
+
+        @keyframes deleting {
+            from {
+                width: 100%;
+            }
+
+            to {
+                width: 0;
+            }
+        }
+
+        body {
+            text-align: center;
+        }
+
+        .typing-container {
+            overflow: hidden;
+            white-space: nowrap;
+            margin: 0 auto;
+        }
+
+        h1 {
+            display: inline-block;
+            border-right: 2px solid black;
+            animation: typing 2s steps(40), blinkCursor 0.5s step-end infinite alternate;
+        }
+
+        .delete-animation {
+            display: inline-block;
+            white-space: nowrap;
+            border-right: 2px solid black;
+            width: 100%;
+            animation: deleting 2s steps(40) 2s forwards;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script>
+        // Функция для получения изображения собаки
+        function getDogImage() {
+            $.ajax({
+                url: 'https://api.thedogapi.com/v1/images/search',
+                dataType: 'json',
+                success: function (data) {
+                    const dogImage = data[0].url;
+                    $('#dogImage').html(`<img src="${dogImage}" alt="Собака">`);
+                },
+                error: function () {
+                    $('#dogImage').text('Не удалось получить изображение собаки.');
+                }
+            });
+        }
+
+        // Вызываем функцию при загрузке страницы
+        $(document).ready(function () {
+            getDogImage();
+        });
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <h1>Моє портфоліо</h1>
+    </header>
+
+    <section>
+        <h2>Про мене</h2>
+        <img src="img/me.png" alt="Ваше фото" style="max-width: 100%; border-radius: 8px; width: 170px; height: auto;">
+        <p>Вітаю! Мене звуть Віталій Терещенко. Я веб-розробник із досвідом роботи у створенні красивих та функціональних веб-сайтів.</p>
+    </section>
+
+    <section>
+        <h2>Навички</h2>
+        <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>React.js</li>
+            <li>Node.js</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Проекти</h2>
+    <ul>
+        <li>
+            <a href="#">
+                <!-- Уменьшение размера логотипа и добавление стилей -->
+                <img src="img/logo1.png" alt="Логотип проекта" style="max-width: 100%; border-radius: 8px; width: 50px; height: auto;">
+                Проект 1 - Короткий опис проекту 1.
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <!-- Уменьшение размера логотипа и добавление стилей -->
+                <img src="img/logo2.jpg" alt="Логотип проекта" style="max-width: 100%; border-radius: 8px; width: 50px; height: auto;">
+                Проект 2 - Короткий опис проекту 2.
+            </a>
+        </li>
+    </ul>
+    </section>
+
+    <section>
+        <h2>Освіта</h2>
+        <p>Мій рівень освіти, навчальні заклади, курси та сертифікати.</p>
+    </section>
+
+    <section>
+        <h2>Профілі у соціальних мережах</h2>
+        <ul>
+            <li><a href="ссылка на ваш LinkedIn">LinkedIn</a></li>
+            <li><a href="ссылка на ваш GitHub">GitHub</a></li>
+            <!-- Добавьте другие социальные сети -->
+        </ul>
+    </section>
+
+    <section>
+        <h2>Особисті якості та інтереси</h2>
+        <p>Особисті якості, які можуть бути корисними у моїй роботі. Тут також будуть мої хобі та інтереси.</p>
+    </section>
+
+    <!-- Блок с изображением собаки -->
+    <div id="dogImage"></div>
+
+    <footer>
+        <p>&copy; 2023 Моє портфоліо</p>
+    </footer>
+</body>
+
+</html>
